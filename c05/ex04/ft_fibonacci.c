@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/17 22:21:37 by cvorley           #+#    #+#             */
-/*   Updated: 2025/09/18 13:46:27 by cvorley          ###   ########.fr       */
+/*   Created: 2025/09/18 13:51:38 by cvorley           #+#    #+#             */
+/*   Updated: 2025/09/20 10:46:34 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-int	ft_iterative_power(int nb, int power)
+int	ft_fibonacci(int index)
 {
-	int	r;
-
-	r = 1;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (power > 0)
-	{
-		r *= nb;
-		power--;
-	}
-	return (r);
+	if (index < 0)
+		return (-1);
+	if (index == 0 || index == 1)
+		return (index);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
 /*int	main(void)
 {
-	printf("%d", ft_iterative_power(2, 2));
+	printf("%d", ft_fibonacci(1));
 }*/
