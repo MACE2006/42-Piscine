@@ -6,11 +6,11 @@
 /*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/14 12:09:55 by cvorley           #+#    #+#             */
-/*   Updated: 2025/09/14 12:31:08 by cvorley          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:49:17 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <stdio.h>
 
 int	ft_atoi(char *str)
 {

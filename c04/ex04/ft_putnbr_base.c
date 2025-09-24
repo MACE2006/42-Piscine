@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putbr_base.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvorley <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cvorley <cvorley@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 11:47:13 by cvorley           #+#    #+#             */
-/*   Updated: 2025/09/15 14:42:46 by cvorley          ###   ########.fr       */
+/*   Updated: 2025/09/24 13:43:11 by cvorley          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char	c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -38,7 +38,7 @@ int	ft_checkbase(char *base)
 	while (base[i])
 	{
 		j = i + 1;
-		if (base[i] == '-' || base[i] == '+' 
+		if (base[i] == '-' || base[i] == '+'
 			|| base[i] > 126 || base[i] < 32)
 			return (0);
 		while (base[j])
@@ -56,8 +56,8 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	char	box[32];
 	long	n;
-	int	size;
-	int	i;
+	int		size;
+	int		i;
 
 	if (!ft_checkbase(base))
 		return ;
@@ -79,10 +79,10 @@ void	ft_putnbr_base(int nbr, char *base)
 		ft_putchar(box[i]);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	int	n = 42;
-	char	*baseB = "0123456789";
+	char	*baseB = "poneyvif";
 
 	ft_putnbr_base(n , baseB);
-}
+}*/
