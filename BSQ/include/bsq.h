@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bsq.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvorley <cvorley@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/22 20:29:56 by jihu              #+#    #+#             */
+/*   Updated: 2025/09/24 16:54:35 by cvorley          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+//Header Guard
+#ifndef BSQ_H
+# define BSQ_H
+
+//Standard Libraries
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdbool.h>
+# include <stddef.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+
+//Define Structure
+typedef struct s_map
+{
+	int				rows;
+	int				c;
+	char			empty;
+	char			obstacle;
+	char			full;
+	unsigned short	**mx;
+	unsigned short	square_size;
+	int				square_row;
+	int				square_col;
+}	t_map;
+
+//Define Functions that can be called by header
+void	*ft_memcpy(void *dest, void *src, size_t num);
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+void	ft_process_map(t_map *map);
+void	ft_get_square(t_map *map);
+void	ft_free_map(t_map *map);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_atoi(char *str);
+int		ft_get_line(t_map *map, int i, int file_name);
+int		ft_get_first_line(t_map *map, int file_name);
+int		ft_get_matrix(t_map *map, int file_name);
+int		ft_map_header(t_map *map, int file_name);
+t_map	*ft_map_error(void);
+t_map	*ft_create_map(char *file_name);
+
+//End Header Guard
+#endif
